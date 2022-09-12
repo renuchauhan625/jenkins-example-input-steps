@@ -1,0 +1,17 @@
+pipeline{
+    agent none
+    stages{
+        stage("input test"){
+            input{
+                message "hello-world"
+                ok "submit"
+            }
+        }
+        stage("Agent test"){
+            agent any
+            steps{
+                echo "hello, agent"
+            }
+        }
+    }
+}
