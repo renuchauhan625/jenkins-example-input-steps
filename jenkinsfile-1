@@ -1,5 +1,5 @@
 pipeline{
-    agent none
+    agent any
     stages{
         stage("input test"){
             input{
@@ -7,7 +7,7 @@ pipeline{
                 ok "submit"
             }
             steps{
-                echo "hello, agent"
+                echo "hello, input block"
             }
         }
     }
