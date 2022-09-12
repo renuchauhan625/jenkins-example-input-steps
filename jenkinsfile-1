@@ -1,0 +1,14 @@
+pipeline{
+    agent any
+    stages{
+        stage("taking input"){
+            input{
+                message "Hello-world"
+                ok "submit"
+            }
+            steps{
+                echo "Hello input block"
+            }
+        }
+    }
+}
