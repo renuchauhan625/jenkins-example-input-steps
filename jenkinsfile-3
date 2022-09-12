@@ -1,0 +1,24 @@
+pipeline{
+    agent none
+    stages{
+        stage("input test"){
+            steps{
+                script{
+                    firstName=input(
+                        message :"hello Please enter your first name",
+                        ok: "submit",
+                        parameters:[string(defaultValue:"Renu",description: "you first name",name:"First Name",trim:true)]
+                    )
+                }
+                    
+                
+            }
+        }
+        stage("Agent test"){
+            agent any
+            steps{
+                echo "hello, good morning ${firstName}"
+            }
+        }
+    }
+}
