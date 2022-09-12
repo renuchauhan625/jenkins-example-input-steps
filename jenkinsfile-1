@@ -1,13 +1,18 @@
 pipeline{
-    agent any
+    agent none
     stages{
-        stage("taking input"){
-            input{
-                message "Hello-world"
-                ok "submit"
-            }
+        stage("input test"){
             steps{
-                echo "Hello input block"
+                input{
+                    message "hello-world"
+                    ok "submit"
+                }
+            }
+        }
+        stage("Agent test"){
+            agent any
+            steps{
+                echo "hello, agent"
             }
         }
     }
