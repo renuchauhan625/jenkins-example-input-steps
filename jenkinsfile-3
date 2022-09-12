@@ -21,4 +21,15 @@ pipeline{
             }
         }
     }
+    post {
+    always {
+       echo """I will always execute this!"""
+        }
+    success {
+            //mail to: "renuchauhan068@gmail.com", subject: 'The Pipeline failed :(',body:"Please do check for the execution log"
+            
+            emailext (to: 'prajapatiabhishek1996@gmail.com',replyTo: 'renuchauhan068@gmail.com',subject: "Email Report",attachLog: true,body: "Execution report")
+            
+        }
+    }
 }
